@@ -1,0 +1,54 @@
+# Claudex Provider Configuration
+# Place at ~/.config/claudex/providers.ini
+# Provider keys must match entries in ~/.config/claudex/credentials
+
+# DeepSeek - Anthropic-compatible API
+[deepseek]
+base_url=https://api.deepseek.com/anthropic
+opus_model=deepseek-v4-pro
+sonnet_model=deepseek-v4-pro
+haiku_model=deepseek-v4-flash
+
+# MiniMax - Anthropic-compatible API
+#[minimax]
+#base_url=https://api.minimax.io/anthropic
+#opus_model=MiniMax-M2.5
+#sonnet_model=MiniMax-M2.5
+#haiku_model=MiniMax-M2.5
+#timeout_ms=3000000
+
+# GLM - Anthropic-compatible API (Z.ai)
+#[glm]
+#base_url=https://api.z.ai/api/anthropic
+#opus_model=glm-4.5
+#sonnet_model=glm-4.5
+#haiku_model=glm-4.5
+
+# Kimi - Anthropic-compatible API (Moonshot AI)
+#[kimi]
+#base_url=https://api.moonshot.ai/anthropic
+#opus_model=Kimi-K2.5
+#sonnet_model=Kimi-K2.5
+#haiku_model=Kimi-K2.5
+
+# Ollama - Local LLM inference
+#[ollama]
+#host=http://localhost:11434
+#model=qwen2.5-coder:32b
+#timeout_ms=600000
+#nonessential_traffic=1
+
+# Mistral (via OpenRouter) — Mistral has no native Anthropic-compatible API.
+# Uses Mistral Medium 3.5 (April 2026), the unified 128B flagship that
+# beats Claude Sonnet 4.5 in agent benchmarks (77.6% SWE-Bench Verified).
+# Requires an OpenRouter API key → https://openrouter.ai/keys
+#[mistral]
+#base_url=https://openrouter.ai/api/v1
+#opus_model=mistral/mistral-medium-3.5
+#sonnet_model=mistral/mistral-medium-3.5
+#haiku_model=mistral/mistral-small
+
+# Adding a new provider:
+# 1. Add a [section] with base_url, opus_model/sonnet_model/haiku_model
+# 2. Add a matching line to ~/.config/claudex/credentials
+# 3. Run: claudex <provider>
